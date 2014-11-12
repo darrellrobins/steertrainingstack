@@ -1,0 +1,13 @@
+<h1>New Article</h1>
+<p>Find me in app/views/articles/edit.html.erb</p>
+<fieldset>
+<%= form_for @article do |form| %>
+  <%= form.label :title %><%= form.text_field :title %>
+  <%= form.label :url %><%= form.text_field :url %>
+  <%= form.label :body %><%= form.text_area :body %>
+  <%= form.label :author %><%= form.text_field :author %>
+<% end %>
+</fieldset>
+<%= link_to 'Back', articles_path %>
+<%= button_to 'Create', :controller => 'articles' %>
+

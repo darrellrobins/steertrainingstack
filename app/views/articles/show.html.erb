@@ -1,0 +1,22 @@
+<article>
+	<!-- <%= @article.inspect %> -->
+	<!-- <%= params %>-->
+	<p><%= flash[:success] %></p>
+	<section>
+		<h2><%= @article.title %> <em><%= @article.author + ', ' + @article.created_at.to_formatted_s(:short)%></em></h2>
+		<%= simple_format @article.body %>
+		<h2><%= pluralize(@article.comments.count, "Comment")%></h2>
+		<% @article.comments.each do |comment|%>
+			<comment><p><%=comment.comment%></p></comment>
+		<% end %>
+		<hr />
+		<h2>Votes</h2>
+		<table><thead><tr><th>Id</th><th>Up/Down</th><th>IP</th><th>At</th></tr></thead><tbody>
+		<% @article.votes.each do | vote | %>
+		<tr><td><%= vote.id %></td><td><%= vote.up == true ? "Up" :"Down"%></td><td><%= vote.from %></td><td><%= time_ago_in_words vote.created_at%> ago</td></tr>
+		<% end %>
+		</tbody></table>
+	</section>
+</article>
+<%= link_to 'Edit Article', edit_article_path(@article) %>
+<%= button_to 'Delete Article', "#destroy" %>

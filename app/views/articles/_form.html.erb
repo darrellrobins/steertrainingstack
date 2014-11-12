@@ -1,0 +1,13 @@
+<h1>New Article</h1>
+<p>Find me in app/views/articles/edit.html.erb</p>
+<fieldset>
+<%= simple_form_for @article do |form| %>
+  <%= form.input :title, input_html: {maxlength: 40} %>
+  <%= form.input :url, input_html: {maxlength: 40} %>
+  <%= form.input :body %>
+  <%= form.input :author, input_html: {maxlength: 40} %>
+  <%= form.button :submit %>
+
+<% end %>
+</fieldset>
+<%= link_to 'Back', articles_path %>

@@ -1,0 +1,8 @@
+<fieldset>
+<%= simple_form_for @comment, url: article_comments_path do |form| %>
+  <%= form.input :comment%>
+  <%= form.button :submit %>
+
+<% end %>
+</fieldset>
+<%= link_to 'Back', articles_path %>

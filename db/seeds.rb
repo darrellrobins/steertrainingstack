@@ -1,0 +1,16 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+seeded_articles = Article.create([
+	{   title: 'A vegan\'s perspective on Paris',
+		body: 'Curabitur blandit odio sit amet urna mollis vulputate. Aenean aliquam magna ut sagittis interdum. Etiam congue est in semper convallis. Nunc fringilla lorem at ipsum pulvinar tincidunt. Phasellus fermentum aliquet ex ut imperdiet. Praesent vulputate consectetur est, sed rhoncus diam. Nullam sodales ipsum rhoncus, lacinia mi at, vestibulum ipsum. Nullam aliquet quam a nulla scelerisque porttitor. Fusce at eros metus. Quisque consectetur velit nec diam varius, id feugiat sem faucibus. Etiam malesuada eget nulla euismod placerat. Donec pretium justo sed leo fringilla lobortis. Proin eleifend luctus turpis, eu maximus enim feugiat non. Morbi accumsan quam diam, vel fringilla enim elementum efficitur. Nam rhoncus lectus eget magna tincidunt vehicula facilisis eu arcu. Nulla accumsan eu arcu a posuere. Maecenas tempus nisi dui, et volutpat felis aliquam et. Sed pretium id lacus in pretium. Duis congue turpis nunc, a scelerisque dui fermentum et. Proin nulla mauris, scelerisque non nibh id, vehicula pharetra est. Vestibulum non arcu dapibus, dictum lectus eu, dictum justo.',
+		author: 'R. D. Crank'
+		},
+	{   title: 'Review lunch',
+		body:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae imperdiet nisi. Pellentesque id tempus nulla. Donec sapien massa, pulvinar at nulla et, aliquam hendrerit urna. Nullam faucibus arcu tincidunt sapien dignissim volutpat. Phasellus laoreet, dolor in lobortis facilisis, libero ante ullamcorper neque, ac feugiat mauris diam vel enim. Fusce commodo est eget condimentum consequat. Vivamus sit amet mattis nisi. Vivamus vel mi ac dolor fermentum pretium. Integer a ex vitae lacus dictum placerat sit amet id libero. Curabitur a rhoncus ligula. Integer auctor sed lectus sit amet tincidunt. Pellentesque placerat ex et dolor pellentesque imperdiet. Nulla mollis in tortor vel fermentum. Aliquam est mauris, placerat in urna ut, rutrum eleifend eros. Nullam scelerisque lectus efficitur nulla interdum feugiat. Duis eget tortor egestas, pharetra quam ac, tincidunt nisi. Vestibulum maximus cursus dignissim. Maecenas et augue ultrices, tincidunt ante eget, euismod libero. In ullamcorper efficitur elit sit amet vehicula. Nullam commodo est et consequat fermentum. Donec vitae erat mi. Praesent id leo vel lorem venenatis volutpat eget eget quam. Suspendisse potenti. Mauris dapibus dui at turpis varius euismod. Vestibulum sit amet metus quis lacus hendrerit hendrerit ut mattis purus. Nunc finibus porttitor urna, vitae ornare eros pulvinar convallis. In volutpat a nisi eu pretium. Pellentesque vulputate posuere mauris id malesuada. Sed quis orci lorem. Praesent id porta augue, nec feugiat neque.',
+		auhtor:'A. Diner'
+		}])
