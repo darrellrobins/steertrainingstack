@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 		elsif params[:sort] == "recent"
 			@articles = Article.order(created_at: :desc)
 		elsif params[:sort] == "featured"
-			@articles = Article.where(:featured => false)
+			@articles = Article.where(:featured => true)
 		else
 			@articles = Article.all
 		end
