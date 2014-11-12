@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
 			@articles = Article.order(votes_count: :desc)
 		elsif params[:sort] == "recent"
 			@articles = Article.order(created_at: :desc)
+		elsif params[:sort] == "featured"
+			@articles = Article.where(:featured => false)
 		else
 			@articles = Article.all
 		end

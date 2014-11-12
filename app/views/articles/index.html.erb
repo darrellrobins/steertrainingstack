@@ -1,17 +1,21 @@
 <div class="sidebar">
 		<%= link_to "Top", articles_path(:sort => :votes) %>
 		<%= link_to "Recent", articles_path(:sort => :recent) %>
-		<%= link_to "Featured" %>
+		<%= link_to "Featured", articles_path(:sort => :featured) %>
 <%= link_to 'New Article', :controller => 'articles', :action => "new" %>
 </div>
 <div class="main">
 <article><% @articles.each do |article| %>
 	<!-- <%= article.inspect %> -->
 	<section>
-		<h2><%= link_to article.title, action: 'show', id: article.id %> <em><%= article.author + ', ' + article.created_at.to_formatted_s(:short)%></em></h2>
+		<h2><% if article.featured? %><span style="font-size:20px;">*</span><%end%> <%= link_to article.title, action: 'show', id: article.id %> <em><%= article.author + ', ' + article.created_at.to_formatted_s(:short)%></em></h2>
 		<%= simple_format article.body %>
-		<%= link_to "+", article_votes_path(article, :up => true, :sort => params[:sort]), :method => :post, :class => :plain %> <%=article.votes.where(up: true).size.to_s %>/
-		<%= link_to "-", article_votes_path(article, :up => false, :sort => params[:sort]), :method => :post, :class => :plain %> <%=article.votes.where(up: false).size.to_s %>
+		<div class="votes">
+			<div class="vote up"><%= link_to article.votes.where(up: true).size.to_s, article_votes_path(article, :up => true, :sort => params[:sort]), :method => :post, :class => [:plain, :up] %>
+			</div>
+			<div class="vote down"><%= link_to article.votes.where(up: false).size.to_s, article_votes_path(article, :up => false, :sort => params[:sort]), :method => :post, :class => [:plain, :down] %> 
+			</div>
+		</div>
 		<%= link_to "Add Comment", new_article_comment_path(article) %>, <span title="<% article.comments.each do |comment| %><%= comment.comment.gsub(/\s+/, " ")%> <% end %>"><%=  pluralize(article.comments.count, "comments") %></span>
 
 		

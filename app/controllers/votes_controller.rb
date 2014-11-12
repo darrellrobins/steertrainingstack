@@ -6,8 +6,8 @@ class VotesController < ApplicationController
 		flash[:success] = "Thanks for voting"
 	else
 		flash[:error] = "Oops, didn't quite pan out"
-		flash[:more] = @vote.errors[:from].each do | error |
-			error.to_s
+		@vote.errors[:from].each do | error |
+			flash[:error] << '. ' << error
 		end
 	end
   	redirect_to articles_path(:sort=>params[:sort])

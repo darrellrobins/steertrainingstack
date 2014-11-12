@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112112845) do
+ActiveRecord::Schema.define(version: 20141112130806) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141112112845) do
     t.integer  "upvotes",                    default: 0
     t.integer  "counter_cache"
     t.integer  "votes_count"
+    t.boolean  "featured",                   default: false
   end
 
   create_table "comments", force: true do |t|

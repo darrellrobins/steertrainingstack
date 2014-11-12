@@ -14,7 +14,7 @@ ActiveAdmin.register Article do
   #   permitted
   # end
 
-  permit_params :title, :body, :url, :author
+  permit_params :title, :body, :url, :author, :featured
 
 
 end
